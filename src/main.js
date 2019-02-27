@@ -1,4 +1,4 @@
-const objPelis=[];
+/*const objPelis=[];
 //let i=0;
 const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari'];
 url = 'http://www.omdbapi.com/?t=';
@@ -33,4 +33,4 @@ function getMovies() {
     objPelis.push(stringMovies);
     console.log(objPelis);
     return objPelis;
-  }
+  }*/
