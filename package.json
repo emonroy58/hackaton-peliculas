@@ -1,0 +1,35 @@
+{
+  "name": "proy-hackaton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test": "jest"
+  },
+  "dependencies": {
+    "chart.js": "^2.7.3",
+    "eslint-plugin-jest": "^22.1.2",
+    "htmlhint": "^0.10.1",
+    "jest": "^23.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "jest": "^23.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emonroy58/hackaton-peliculas.git"
+  },
+  "author": "Cristal,Analhi,Elsy,Ely",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emonroy58/hackaton-peliculas/issues"
+  },
+  "homepage": "https://github.com/emonroy58/hackaton-peliculas#readme"
+}
