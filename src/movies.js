@@ -1,15 +1,16 @@
 const objTitlePelis=[];
 //let i=0;
 
+const titlePelis ='Get out';
 const url = 'https://www.omdbapi.com/?t=';
 
 
 
+const searchMovie = document.getElementById('tite-mov');
 const productWrapper = document.getElementById('list-movies');
-const titleMov = document.getElementById('title-mov');
+
 const viewMovies = () => { //muestra pokemon por tipo   
-    lecturaData();
-    //const search = searchMovie.value
+    search = searchMovie.value
     let viewMovie = '';
     for (let i in objTitlePelis) {
       //console.log('Tipo Poekemon: ',pokemon);
@@ -25,11 +26,12 @@ const viewMovies = () => { //muestra pokemon por tipo
           </div>               
           `
           }
-              
+
     productWrapper.innerHTML = viewMovie;
     return viewMovie;
   }
-  titleMov.addEventListener('click', viewMovies); //fin muestreo de tarjetas
+  searchMovie.addEventListener('click', viewMovies); //fin muestreo de tarjetas
+
 
 
 
@@ -58,6 +60,7 @@ function lecturaData(){
     .catch(err => (err))
 }
  
+
 
 
  
