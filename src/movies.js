@@ -1,14 +1,15 @@
 const objTitlePelis=[];
 //let i=0;
-const titlePelis ='Get out';
+
 const url = 'https://www.omdbapi.com/?t=';
 
 
-const searchMovie = document.getElementById('tite-mov');
-const productWrapper = document.getElementById('list-movies');
 
+const productWrapper = document.getElementById('list-movies');
+const titleMov = document.getElementById('title-mov');
 const viewMovies = () => { //muestra pokemon por tipo   
-    search = searchMovie.value
+    lecturaData();
+    //const search = searchMovie.value
     let viewMovie = '';
     for (let i in objTitlePelis) {
       //console.log('Tipo Poekemon: ',pokemon);
@@ -24,11 +25,11 @@ const viewMovies = () => { //muestra pokemon por tipo
           </div>               
           `
           }
-
+              
     productWrapper.innerHTML = viewMovie;
     return viewMovie;
   }
-  searchMovie.addEventListener('click', viewMovies); //fin muestreo de tarjetas
+  titleMov.addEventListener('click', viewMovies); //fin muestreo de tarjetas
 
 
 
@@ -37,24 +38,27 @@ const viewMovies = () => { //muestra pokemon por tipo
 
 
 
-
-
-
-   let url_pelis = url+titlePelis+'&apikey=4c2bc917'
-   fetch(url_pelis ) //lectura del archivo .json
-  .then(response => response.json())
-  .then(data => {
-   // localStorage.setItem('data', JSON.stringify(data))
-   // console.log (data); 
-    objTitlePelis.push(data);
-    console.log(objTitlePelis);
-   // return data;
-
-  }) 
-  //console.log (data); 
-
-  .catch(err => (err))
  
+function lecturaData(){
+    const searchMovie = document.getElementById('src-title').value;
+    const titlePelis = searchMovie;
+     let url_pelis = url+titlePelis+'&apikey=4c2bc917'
+     fetch(url_pelis ) //lectura del archivo .json
+    .then(response => response.json())
+    .then(data => {
+      localStorage.setItem('data', JSON.stringify(data))
+     // console.log (data); 
+      objTitlePelis.push(data);
+      console.log(objTitlePelis);
+      return data;
+      
+    }) 
+    //console.log (data); 
+  
+    .catch(err => (err))
+}
+ 
+
 
  
 
