@@ -1,0 +1,26 @@
+* {
+    margin-left:0.6;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+   
+    }
+
+
+#tite-mov {
+    color: #f8f9fa;
+    border-color: #ad371b;
+}
+
+
+#tite-mov:hover {
+    color: #fff;
+    background-color: #b11b1b;
+    border-color: #ab202c;
+}
+
+nav ul{
+    float: right;
+    display: flex;
+}
