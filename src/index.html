@@ -5,44 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prime Movie</title>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
 </head>
 <body>
+     
+    <div class="containner-nav"> 
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-   
-    
-        <a class="navbar-brand" href="#">Premia Movie</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
-               <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="tite-mov">Buscar</button>  
-         </form>
-        
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a  id = "home" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Tipo Pokemon
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="menu-filtro">
-                  <a class="dropdown-item" href="#">Action</a>
-                </div>
-              </li>
-          </ul>
+            <a class="navbar-brand " href="#">Prem Movie</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <form class="form-inline my-2 my-lg-0">
+               <div class= "input-group " id="src">
+                    <input class="form-src mr-sm-3" type="search" placeholder="Escriba titulo original" id="src-title">
+                    <button id="title-mov" class="btn btn-outline-success my-lg-0 my-sm-0" type="button" ><i class="fas fa-search"></i></button>
+               </div>                
+            </form>         
+            
           
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Genero
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Acccion</a>
+                    <a class="dropdown-item" href="#">Comedia</a>
+                    <a class="dropdown-item" href="#">Terror</a>
+                  </div>
+                </li>
+             </ul>
+            </div>
+                  
+          </nav>
         </div>
-      </nav>
-
       
 
  <section id="cont-movies" >
