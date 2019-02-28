@@ -56,4 +56,6 @@ const viewMovies = () => { //muestra pokemon por tipo
   .catch(err => (err))
  
 
+ 
+
 
