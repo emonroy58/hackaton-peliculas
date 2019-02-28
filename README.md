@@ -1,8 +1,6 @@
 # Hackaton Movies
 
-Este proyecto esta pensado para ser usado por _____________________________________________________
-
-Más información sobre el proceso de Diseño y Experiencia de Usuario (UX) [aquí.](https://docs.google.com/document/d/1WWJJuuWotEwdXIHM9YZ36Bz5RlnRQjXMCAnmbeMgakk/edit?usp=sharing)
+Información sobre el proceso de Diseño y Experiencia de Usuario (UX) [aquí.](https://docs.google.com/document/d/1WWJJuuWotEwdXIHM9YZ36Bz5RlnRQjXMCAnmbeMgakk/edit?usp=sharing)
 
 ## Indicaciones previas para el funcionamiento del proyecto
 
@@ -27,10 +25,6 @@ Abrir la URL `https://_______________________________`
 Y tener instalado [Visual Studio Code](https://code.visualstudio.com/), o el editor de su preferencia
 
 ## Pruebas
-
-(((((Se realizaron pruebas unitarias, desde la `Terminal`, usando [NPM (Node Package Manage)](https://www.npmjs.com/get-npm).)))))
-
-(((`npm run test`))))
 
 ## Herramientas
 
