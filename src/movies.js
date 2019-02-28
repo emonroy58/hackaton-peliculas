@@ -1,7 +1,7 @@
 const objTitlePelis=[];
 //let i=0;
 const titlePelis ='Get out';
-const url = 'http://www.omdbapi.com/?t=';
+const url = 'https://www.omdbapi.com/?t=';
 
 
 const searchMovie = document.getElementById('tite-mov');
