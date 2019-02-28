@@ -39,7 +39,7 @@ function lecturaData(){
     const searchMovie = document.getElementById('src-title').value;
     const titlePelis = 'Get out';
     const url = 'http://www.omdbapi.com/?t=';
-     let url_pelis = url+titlePelis+'&apikey=4c2bc917';
+     let url_pelis = 'http://www.omdbapi.com/?t=Get%20Out&apikey=4c2bc917';
      fetch(url_pelis) //lectura del archivo .json
     .then(response => response.json())
     .then(data => {
