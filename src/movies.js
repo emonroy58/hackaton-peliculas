@@ -1,7 +1,9 @@
 const objTitlePelis=[];
 //let i=0;
+
 const titlePelis ='Get out';
 const url = 'https://www.omdbapi.com/?t=';
+
 
 
 const searchMovie = document.getElementById('tite-mov');
@@ -38,22 +40,29 @@ const viewMovies = () => { //muestra pokemon por tipo
 
 
 
+ 
+function lecturaData(){
+    const searchMovie = document.getElementById('src-title').value;
+    const titlePelis = searchMovie;
+     let url_pelis = url+titlePelis+'&apikey=4c2bc917'
+     fetch(url_pelis ) //lectura del archivo .json
+    .then(response => response.json())
+    .then(data => {
+      localStorage.setItem('data', JSON.stringify(data))
+     // console.log (data); 
+      objTitlePelis.push(data);
+      console.log(objTitlePelis);
+      return data;
+      
+    }) 
+    //console.log (data); 
+  
+    .catch(err => (err))
+}
+ 
 
 
-   let url_pelis = url+titlePelis+'&apikey=4c2bc917'
-   fetch(url_pelis ) //lectura del archivo .json
-  .then(response => response.json())
-  .then(data => {
-    localStorage.setItem('data', JSON.stringify(data))
-   // console.log (data); 
-    objTitlePelis.push(data);
-    console.log(objTitlePelis);
-    return data;
 
-  }) 
-  //console.log (data); 
-
-  .catch(err => (err))
  
 
 
