@@ -43,7 +43,7 @@ function lecturaData(){
     const searchMovie = document.getElementById('src-title').value;
     const titlePelis = searchMovie;
      let url_pelis = url+titlePelis+'&apikey=4c2bc917';
-     fetch(url_pelis ) //lectura del archivo .json
+     fetch(url_pelis) //lectura del archivo .json
     .then(response => response.json())
     .then(data => {
       localStorage.setItem('data', JSON.stringify(data))
