@@ -1,7 +1,7 @@
 const objTitlePelis=[];
 //let i=0;
 const titlePelis ='Get out';
-const url = 'http://www.omdbapi.com/?t=';
+const url = 'https://www.omdbapi.com/?t=';
 
 
 const searchMovie = document.getElementById('tite-mov');
@@ -44,11 +44,11 @@ const viewMovies = () => { //muestra pokemon por tipo
    fetch(url_pelis ) //lectura del archivo .json
   .then(response => response.json())
   .then(data => {
-    localStorage.setItem('data', JSON.stringify(data))
+   // localStorage.setItem('data', JSON.stringify(data))
    // console.log (data); 
     objTitlePelis.push(data);
     console.log(objTitlePelis);
-    return data;
+   // return data;
 
   }) 
   //console.log (data); 
