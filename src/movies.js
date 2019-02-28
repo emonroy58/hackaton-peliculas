@@ -37,7 +37,7 @@ const viewMovies = () => { //muestra pokemon por tipo
  
 function lecturaData(){
     const searchMovie = document.getElementById('src-title').value;
-    const titlePelis = searchMovie;
+    const titlePelis = 'Get out';
     const url = 'http://www.omdbapi.com/?t=';
      let url_pelis = url+titlePelis+'&apikey=4c2bc917';
      fetch(url_pelis) //lectura del archivo .json
