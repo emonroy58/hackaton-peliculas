@@ -1,8 +1,9 @@
 *{
-    margin: 0;
-    padding: 0;
-
-
+    margin-left:0.6;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 } 
 
 body, html{
@@ -14,7 +15,15 @@ body, html{
     background-color: black;
 }
 
-.content-all{/*inicia carousel*/
+#printMovies{
+    margin-top: 40px;
+}
+
+#title{
+    margin-top: 250px;
+}
+
+.content-all{
     width: 210px;
     margin: auto;
     perspective: 800px;
@@ -33,7 +42,6 @@ body, html{
     animation-play-state: paused;
     cursor: pointer;
 }
-
 
 .content-carrousel figure{
     width: 100%;
@@ -78,4 +86,38 @@ body, html{
     }to{
         transform: rotateY(360deg);
     }
+}
+h1{
+    color: white;
+    text-align: center;
+}
+
+h3{
+    color: white;
+    text-align: center;
+}
+
+
+nav ul{
+    float: right;
+    display: flex;
+}
+
+.col-lg-3 {
+    background-color: black;
+    display: inline-block;
+} 
+
+.btn-outline-success {
+    color: white;
+    border-color: white;
+}
+
+.card{
+    background-color: black;
+}
+
+.card-body{
+    background-color: rgba(30, 187, 187, 0.863);
+    color: white;
 }

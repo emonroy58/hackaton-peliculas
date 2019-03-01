@@ -5,24 +5,21 @@ const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligar
 //const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari',];
 url = 'https://www.omdbapi.com/?t=';
 
-
-  for (let i=0; i< arrayPelis.length; i++)
-  {   
-     let url_pelis = url+arrayPelis[i]+'&apikey=4c2bc917'
-     fetch(url_pelis ) //lectura del archivo .json
-    .then(response => response.json())
-    .then(data => {
-      localStorage.setItem('data', JSON.stringify(data))
-     // console.log (data); 
-      objPelis.push(data);
-      console.log(objPelis);
-    // const dataMovies =  objPelis;
-    //getMovies();
-     return objPelis;
-      
-    }) 
-    //console.log (data); 
-  
+for (let i=0; i< arrayPelis.length; i++)
+{   
+   let url_pelis = url+arrayPelis[i]+'&apikey=4c2bc917'
+   fetch(url_pelis ) //lectura del archivo .json
+  .then(response => response.json())
+  .then(data => {
+    localStorage.setItem('data', JSON.stringify(data))
+   // console.log (data); 
+    objPelis.push(data);
+    //console.log(objPelis);
+    PrintMovies(objPelis)
+    return data;
+    
+  }) 
+  //console.log (data);
     .catch(err => (err))
   }
 
@@ -39,55 +36,11 @@ for(let j=0; j<objPelis.length; j++){
   console.log(random);
 }
 
-  for(let i in objPelis) {
-       //    console.log(objPelis[i])
-   let section = `
-   <div class="card col-lg-3 col-md-6 col-sm-12">
-         <div class="card-body bg-dark" style="width = 20rem;">
-           <img src="${arrayRandom[i].Poster}" class="card-img-top" alt="${arrayRandom[i].Title}">
-           <div class="card-body">
-           <h5 id="product-name" class="card-title d-flex justify-content-center">${arrayRandom[i].Title}</h5>
-           </div>
-         </div> 
-        </div>               
-        `
-    listRandom.insertAdjacentHTML("beforeend",section);
-  }
-  return listRandom;
-
-  //console.log(listRandom);
-
-}
-
-
-
-radomBoton.addEventListener('click',randMovies)
-
-
-/*const firstPage =document.getElementById("first-page")
-function getMovies() {//imprime carousel
-  console.log(objPelis);
-   //const stringMovies = JSON.parse(localStorage.getItem('data'));
-   //const section = firstPage;
-   firstPage.innerHTML;
-   let section ='';
-  for(let i in objPelis) {
-   section = section+`
-   <div class="carousel-item active">
-     <img src="${objPelis[i].Poster}" class="d-block w-25" alt="...">
-     </div>
-
-     `
-     firstPage.insertAdjacentHTML("beforeend",section);
-     return firstPage;
-  }
-
-  console.log(firstPage)
-
-}*/
- 
-
-
+const title = document.getElementById("title");
+const subtitle = document.getElementById("subtitle");
+const discover = document.getElementById("discover");
+const carrousel = document.getElementById("carrousel");
+  
 const dropdownGenero = document.getElementsByClassName('dropdown-item'); //funcion filtro
 const selectGenero = () => {
     
@@ -95,11 +48,17 @@ const selectGenero = () => {
     dropdownGenero[i].addEventListener("click", () => {
       //console.log("hola")
       let generoId = dropdownGenero[i].id;
+      title.innerHTML = "";
+      subtitle.innerHTML = generoId;
       const arrayGeneroPeli = window.data.filtroGenero(objPelis, generoId);
       //console.log(arrayGenero)
       PrintMovies(arrayGeneroPeli);
+      productWrapper.innerHTML = "";
+      document.getElementById("subtitle").style.display = "block"
+      document.getElementById("list-genero").style.display = "block";
+      document.getElementById("carousel-genero").style.display = "none";
       return arrayGeneroPeli;
-      
+
       //getMovies (arrayGeneroPeli)
 })
   }}
@@ -115,6 +74,10 @@ const selectGenero = () => {
         const arrayPaisPeli = window.data.filtroPais(objPelis, paisId);
         //console.log(arrayGenero)
         PrintMovies(arrayPaisPeli);
+        productWrapper.innerHTML = "";
+        document.getElementById("subtitle").style.display = "block"
+        document.getElementById("list-genero").style.display = "block";
+        document.getElementById("carousel-genero").style.display = "none";
         return arrayPaisPeli;
         
         //getMovies (arrayGeneroPeli)
@@ -128,17 +91,19 @@ const selectGenero = () => {
       let viewMovie = '';
       for (let i in objTitlePelis) {
          viewMovie = viewMovie + `  
-          
-            <div class="card col-lg-3 col-md-6 col-sm-12">
-             <div class="card-body bg-dark" style="width = 20rem;">
-               <img src="${objTitlePelis[i].Poster}" class="card-img-top" alt="${objTitlePelis[i].Title}">
-               <div class="card-body">
-               <h5 id="product-name" class="card-title d-flex justify-content-center">${objTitlePelis[i].Title}</h5>
-               </div>
-             </div> 
-            </div>               
-            `
-            }
+         <div id="printMovies" class="card col-lg-3 col-md-6 col-sm-12">
+          <div class="card-body bd-dark style="width = 20rem;">
+            <img src="${objTitlePelis[i].Poster}" class="card-img-top" alt="${objTitlePelis[i].Title}">
+            <div class="card-body">
+            <h5 id="product-name" class="card-title d-flex justify-content-center">Title: ${objTitlePelis[i].Title}</h5>
+            <h6 id="product-name" class="card-title d-flex justify-content-center">Genre: ${objTitlePelis[i].Genre}</h6>
+            <h6 id="product-name" class="card-title d-flex justify-content-center">Year: ${objTitlePelis[i].Year}</h6>
+            </div>
+          </div> 
+         </div> 
+         </div>          
+         `
+        }
                 
       productWrappGener.innerHTML = viewMovie;
       return viewMovie;
