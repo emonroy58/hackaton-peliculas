@@ -12,7 +12,8 @@ for (let i=0; i< arrayPelis.length; i++)
     localStorage.setItem('data', JSON.stringify(data))
    // console.log (data); 
     objPelis.push(data);
-    console.log(objPelis);
+    //console.log(objPelis);
+    PrintMovies(objPelis)
     return data;
     
   }) 
@@ -21,7 +22,10 @@ for (let i=0; i< arrayPelis.length; i++)
   .catch(err => (err))
 }
 
-
+const title = document.getElementById("title");
+const subtitle = document.getElementById("subtitle");
+const discover = document.getElementById("discover");
+const carrousel = document.getElementById("carrousel");
 
 const dropdownGenero = document.getElementsByClassName('dropdown-item'); //funcion filtro
 const selectGenero = () => {
@@ -30,11 +34,15 @@ const selectGenero = () => {
     dropdownGenero[i].addEventListener("click", () => {
       //console.log("hola")
       let generoId = dropdownGenero[i].id;
+      title.innerHTML = "";
+      subtitle.innerHTML = generoId;
       const arrayGeneroPeli = window.data.filtroGenero(objPelis, generoId);
       //console.log(arrayGenero)
       PrintMovies(arrayGeneroPeli);
+      document.getElementById("discover").style.display = "none";
+      document.getElementById("carrousel").style.display = "none";
       return arrayGeneroPeli;
-      
+
       //getMovies (arrayGeneroPeli)
 })
   }}
@@ -50,6 +58,8 @@ const selectGenero = () => {
         const arrayPaisPeli = window.data.filtroPais(objPelis, paisId);
         //console.log(arrayGenero)
         PrintMovies(arrayPaisPeli);
+        document.getElementById("discover").style.display = "none";
+        document.getElementById("carrousel").style.display = "none";
         return arrayPaisPeli;
         
         //getMovies (arrayGeneroPeli)
@@ -63,17 +73,19 @@ const selectGenero = () => {
       let viewMovie = '';
       for (let i in objTitlePelis) {
          viewMovie = viewMovie + `  
-          
-            <div class="card col-lg-3 col-md-6 col-sm-12">
-             <div class="card-body bg-dark" style="width = 20rem;">
-               <img src="${objTitlePelis[i].Poster}" class="card-img-top" alt="${objTitlePelis[i].Title}">
-               <div class="card-body">
-               <h5 id="product-name" class="card-title d-flex justify-content-center">${objTitlePelis[i].Title}</h5>
-               </div>
-             </div> 
-            </div>               
-            `
-            }
+         <div class="card col-lg-3 col-md-6 col-sm-12">
+          <div class="card-body bd-dark style="width = 20rem;">
+            <img src="${objTitlePelis[i].Poster}" class="card-img-top" alt="${objTitlePelis[i].Title}">
+            <div class="card-body">
+            <h5 id="product-name" class="card-title d-flex justify-content-center">Title: ${objTitlePelis[i].Title}</h5>
+            <h6 id="product-name" class="card-title d-flex justify-content-center">Genre: ${objTitlePelis[i].Genre}</h6>
+            <h6 id="product-name" class="card-title d-flex justify-content-center">Year: ${objTitlePelis[i].Year}</h6>
+            </div>
+          </div> 
+         </div> 
+         </div>          
+         `
+        }
                 
       productWrappGener.innerHTML = viewMovie;
       return viewMovie;

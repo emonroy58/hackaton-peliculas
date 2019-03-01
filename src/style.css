@@ -1,5 +1,9 @@
 *{
-    margin: 0;
+    margin-left:0.6;
+    padding:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 } 
 
 body, html{
@@ -11,18 +15,80 @@ body, html{
     background-color: black;
 }
 
+.content-all{
+    width: 210px;
+    margin: auto;
+    perspective: 800px;
+    position: relative;
+    margin-top: 50px;
+}
 
-#tite-mov {
-    color: #f8f9fa;
-    border-color: #ad371b;
+.content-carrousel{/*rotacion de imagenes*/
+    width: 100%;
+    position: absolute;
+    animation: rotar 25s infinite linear;
+    transform-style: preserve-3d;
+}
+
+.content-carrousel:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+.content-carrousel figure{
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0px 0px 20px 0px black;
+    transition: all 300ms;
+    
+}
+
+.content-carrousel figure:hover{
+    box-shadow: 0px 0px 0px 0px black;
+    transition: all 300ms;
+}
+
+.content-carrousel figure:nth-child(1){transform: rotateY(0deg) translateZ(300px);}
+.content-carrousel figure:nth-child(2){transform: rotateY(40deg) translateZ(300px);}
+.content-carrousel figure:nth-child(3){transform: rotateY(80deg) translateZ(300px);}
+.content-carrousel figure:nth-child(4){transform: rotateY(120deg) translateZ(300px);}
+.content-carrousel figure:nth-child(5){transform: rotateY(160deg) translateZ(300px);}
+.content-carrousel figure:nth-child(6){transform: rotateY(200deg) translateZ(300px);}
+.content-carrousel figure:nth-child(7){transform: rotateY(240deg) translateZ(300px);}
+.content-carrousel figure:nth-child(8){transform: rotateY(280deg) translateZ(300px);}
+.content-carrousel figure:nth-child(9){transform: rotateY(320deg) translateZ(300px);}
+.content-carrousel figure:nth-child(10){transform: rotateY(360deg) translateZ(300px);}
+
+.content-carrousel img{
+    width: 100%;
+    transition: all 100ms;
+}
+
+.content-carrousel img:hover{
+    transform: scale(1.2);
+    transition: all 100ms;
 }
 
 
-#tite-mov:hover {
-    color: #fff;
-    background-color: #b11b1b;
-    border-color: #ab202c;
+@keyframes rotar{
+    from{
+        transform: rotateY(0deg);
+    }to{
+        transform: rotateY(360deg);
+    }
 }
+h1{
+    color: white;
+    text-align: center;
+}
+
+h3{
+    color: white;
+    text-align: center;
+}
+
 
 nav ul{
     float: right;
@@ -39,3 +105,11 @@ nav ul{
     border-color: white;
 }
 
+.card{
+    background-color: black;
+}
+
+.card-body{
+    background-color: rgba(30, 187, 187, 0.863);
+    color: white;
+}

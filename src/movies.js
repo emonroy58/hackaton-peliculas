@@ -29,7 +29,7 @@ const viewMovies = (objTitlePelis) => { //muestra peliculas de acuerdo a la busq
     data.forEach(element => {
         viewMovie += `          
         <div class="card col-lg-3 col-md-6 col-sm-12">
-         <div class="card-body bg-dark" style="width = 20rem;">
+         <div class="card-body" style="width = 20rem;">
            <img src="${element.Poster}" class="card-img-top" alt="${element.Title}">
            <div class="card-body">
            <h5 id="product-name" class="card-title d-flex justify-content-center">${element.Title}</h5>
