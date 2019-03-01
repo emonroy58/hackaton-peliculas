@@ -1,7 +1,7 @@
 const objPelis=[];
 //let i=0;
 const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari','The silence of the Lambs','Girls Trip','Zoolander','I Heart Huckabees','Tenacious D in The Pick of Destiny','Bridesmaids','Indiana Jones','Star Wars','Jumanji','Jurassic Park','Pirates of the Caribbean: The Curse of the Black Pearl','Mad Max: Fury Road','Metropolis','Gravity','War for the Planet of the Apes','Wall-E','Die Hard','Terminator 2: Judgment Day','The Dark Knight','Drive', 'E.T. The Extra-Terrestrial', 'Seven Samurai'];
-url = 'http://www.omdbapi.com/?t=';
+url = 'https://www.omdbapi.com/?t=';
 
 
 
@@ -28,7 +28,6 @@ for (let i=0; i< arrayPelis.length; i++)
 const dropdownGenero = document.getElementsByClassName('dropdown-item');
 
 const selectGenero = () => {
-  const arrayGenero = objPelis;
   for (let i = 0; i < dropdownGenero.length; i++) {
     dropdownGenero[i].addEventListener("click", () => {
       //console.log("hola")
