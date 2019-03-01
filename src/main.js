@@ -1,11 +1,7 @@
-/*const objPelis=[];
+const objPelis=[];
 //let i=0;
-const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari'];
-url = 'http://www.omdbapi.com/?t=';
-
-
-
-
+const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari','The silence of the Lambs','Girls Trip','Zoolander','I Heart Huckabees','Tenacious D in The Pick of Destiny','Bridesmaids','Indiana Jones','Star Wars','Jumanji','Jurassic Park','Pirates of the Caribbean: The Curse of the Black Pearl','Mad Max: Fury Road','Metropolis','Gravity','War for the Planet of the Apes','Wall-E','Die Hard','Terminator 2: Judgment Day','The Dark Knight','Drive', 'E.T. The Extra-Terrestrial', 'Seven Samurai'];
+url = 'https://www.omdbapi.com/?t=';
 
 for (let i=0; i< arrayPelis.length; i++)
 {   
@@ -27,7 +23,48 @@ for (let i=0; i< arrayPelis.length; i++)
 
 
 
-function getMovies() {
+const dropdownGenero = document.getElementsByClassName('dropdown-item'); //funcion filtro
+const selectGenero = () => {
+    
+  for (let i = 0; i < dropdownGenero.length; i++) {
+    dropdownGenero[i].addEventListener("click", () => {
+      //console.log("hola")
+      let generoId = dropdownGenero[i].id;
+      const arrayGeneroPeli = window.data.filtroGenero(objPelis, generoId);
+      //console.log(arrayGenero)
+      PrintMovies(arrayGeneroPeli);
+      return arrayGeneroPeli;
+      
+      //getMovies (arrayGeneroPeli)
+})
+  }}
+  selectGenero()
+
+
+  const productWrappGener = document.getElementById('list-genero');
+    const PrintMovies = (objTitlePelis) => { //muestra peliculas por genero 
+      let viewMovie = '';
+      for (let i in objTitlePelis) {
+         viewMovie = viewMovie + `  
+          
+            <div class="card col-lg-3 col-md-6 col-sm-12">
+             <div class="card-body bg-dark" style="width = 20rem;">
+               <img src="${objTitlePelis[i].Poster}" class="card-img-top" alt="${objTitlePelis[i].Title}">
+               <div class="card-body">
+               <h5 id="product-name" class="card-title d-flex justify-content-center">${objTitlePelis[i].Title}</h5>
+               </div>
+             </div> 
+            </div>               
+            `
+            }
+                
+      productWrappGener.innerHTML = viewMovie;
+      return viewMovie;
+    }
+
+
+
+/*function getMovies() {
     const stringMovies = JSON.parse(localStorage.getItem('data'));
     console.log(stringPokemon);
     objPelis.push(stringMovies);
