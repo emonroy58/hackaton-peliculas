@@ -15,6 +15,14 @@ body, html{
     background-color: black;
 }
 
+#printMovies{
+    margin-top: 40px;
+}
+
+#title{
+    margin-top: 250px;
+}
+
 .content-all{
     width: 210px;
     margin: auto;

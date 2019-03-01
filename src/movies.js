@@ -27,7 +27,7 @@ const viewMovies = (objTitlePelis) => { //muestra peliculas de acuerdo a la busq
     let viewMovie = '';
 
     data.forEach(element => {
-        viewMovie += `          
+        viewMovie = `          
         <div class="card col-lg-3 col-md-6 col-sm-12">
          <div class="card-body" style="width = 20rem;">
            <img src="${element.Poster}" class="card-img-top" alt="${element.Title}">
@@ -38,8 +38,11 @@ const viewMovies = (objTitlePelis) => { //muestra peliculas de acuerdo a la busq
         </div>               
         `
     productWrapper.insertAdjacentHTML('beforeend', viewMovie);
+    document.getElementById("list-genero").style.display = "none"
+    document.getElementById("subtitle").style.display = "none"
 
     });
+
  
     return viewMovie;
   }
