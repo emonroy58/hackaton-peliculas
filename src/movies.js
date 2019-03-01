@@ -25,9 +25,8 @@ const productWrapper = document.getElementById('list-movies');
 const viewMovies = (objTitlePelis) => { //muestra peliculas de acuerdo a la busqueda por coincidencia   
     let data=  objTitlePelis[0];
     let viewMovie = '';
-
-    data.forEach(element => {
-        viewMovie += `          
+        data.forEach(element => {
+        viewMovie = `          
         <div class="card col-lg-3 col-md-6 col-sm-12">
          <div class="card-body bg-dark" style="width = 20rem;">
            <img src="${element.Poster}" class="card-img-top" alt="${element.Title}">
