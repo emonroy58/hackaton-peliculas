@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Prime Movie</title>
+    <title>REEL</title>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
     crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css"> -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
      
     <div class="containner-nav"> 
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-            <a class="navbar-brand " href="#">Prem Movie</a>
+            <a class="navbar-brand " href="#">REEL</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             
             <form class="form-inline my-2 my-lg-0">
                <div class= "input-group " id="src">
-                    <input class="form-src mr-sm-3" type="search" placeholder="Escriba titulo original" id="src-title">
+                    <input id="src-title" class="form-src mr-sm-3" type="search" placeholder="Escriba titulo original" >
                     <button id="title-mov" class="btn btn-outline-success my-lg-0 my-sm-0" type="button" ><i class="fas fa-search"></i></button>
                </div>                
             </form>         
@@ -41,9 +42,12 @@
                     Genero
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Acccion</a>
-                    <a class="dropdown-item" href="#">Comedia</a>
-                    <a class="dropdown-item" href="#">Terror</a>
+                        <a id="Horror" class="dropdown-item" href="#">Horror</a>
+                        <a id="Drama" class="dropdown-item" href="#">Drama</a>
+                        <a id="Comedy" class="dropdown-item" href="#">Comedy</a>
+                        <a id="Action" class="dropdown-item" href="#">Action</a>
+                        <a id="Adventure" class="dropdown-item" href="#">Adventure</a>
+                        <a id="Sci-Fi" class="dropdown-item" href="#">Sci-Fi</a>
                   </div>
                 </li>
              </ul>
@@ -54,19 +58,52 @@
       
 
  <section id="cont-movies" >
-    <div class="row col-md-12 list-pokemon mt-3"id="list-movies"> 
+    <div class="row col-md-12 list-movies mt-3"id="list-movies"> 
               
      </div>
         
   </section>    
 
+<section id= "carousel-genero">
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                        <img class="d-block w-25" src="https://source.unsplash.com/user/erondu/1600x900/?nature" alt="">   
+                  </div>
+                  <div class="carousel-item">
+                        <img class="d-block w-25" src="https://source.unsplash.com/user/erondu/1600x900/?animals" alt="">
+                  </div>
+                  <div class="carousel-item">
+                        <img class="d-block w-25" src="https://source.unsplash.com/user/erondu/1600x900/?cinema" alt="">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+        </div>
+
+</section>
+  
+<section id="cont-genero" >
+        <div class="row col-md-12 list-gener mt-3" id="list-genero"> 
+                  
+         </div>
+            
+</section>   
 
 
- <script src= 'main.js'></script>
  <script src= 'movies.js'></script>
+ <script src= 'data.js'></script>
  <script src="js/jquery-3.3.1.min.js"></script>
  <script src="js/bootstrap.min.js"></script><!--enlace a bootstrap -->
  <script src="js/bootstrap.bundle.min.js"></script><!--enlace a bootstrap -->
+ <script src= 'main.js'></script>
 
 </body>
 </html>
