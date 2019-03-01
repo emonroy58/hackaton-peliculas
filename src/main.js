@@ -1,7 +1,9 @@
+
 const objPelis=[];
 let dataMovies;
 
-const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari','The silence of the Lambs','Girls Trip','Zoolander','I Heart Huckabees','Tenacious D in The Pick of Destiny','Bridesmaids','Indiana Jones','Star Wars','Jumanji','Jurassic Park','Pirates of the Caribbean: The Curse of the Black Pearl','Mad Max: Fury Road','Metropolis','Gravity','War for the Planet of the Apes','Wall-E','Die Hard','Terminator 2: Judgment Day','The Dark Knight','Drive', 'E.T. The Extra-Terrestrial', 'Seven Samurai'];
+const arrayPelis =['American Pie', 'The Hangover', 'The Mask', 'Scary Movie', 'Deadpool', 'Back to the Future', 'Jurassic Park', 'The Lord of the Rings', 'Harry Potter', 'Avengers', 'Terminator', 'Pulp Fiction', 'Die Hard', 'Twelve Monkeys', 'Man on Fire', 'Kill Bill', 'The Dark Knight', 'Metropolis', 'Inception', 'A Clockwork Orange', '2001: A Space Odyssey', 'The Exorcist', ' The Shining', 'The Omen', 'Hostel', 'It',
+'Get out','Psycho','The babadook','The cabinet of Dr. Caligari','The silence of the Lambs','Girls Trip','Zoolander','I Heart Huckabees','Tenacious D in The Pick of Destiny','Bridesmaids','Indiana Jones','Star Wars','Jumanji','Jurassic Park','Pirates of the Caribbean: The Curse of the Black Pearl','Mad Max: Fury Road','Metropolis','Gravity','War for the Planet of the Apes','Wall-E','Die Hard','Terminator 2: Judgment Day','The Dark Knight','Drive', 'E.T. The Extra-Terrestrial', 'Seven Samurai'];
 //const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari',];
 url = 'https://www.omdbapi.com/?t=';
 
@@ -124,3 +126,34 @@ const selectGenero = () => {
      productWrappGener.innerHTML = viewMovie;
      return viewMovie;
    }
+
+   /*btn subir*/
+
+$(document).ready(function () {
+  /******hacia arriba *****/
+  $('.ir-arriba').click(function(){
+      $('body, html').animate({
+          scrollTop: '0px'
+      }, 1000);
+  });
+  $(window).scroll(function(){
+      if( $(this).scrollTop() > 0 ){
+          $('.ir-arriba').slideDown(600);
+      } else {
+          $('.ir-arriba').slideUp(600);
+      }
+  });
+  /hacia abajo/
+  $('.ir-abajo').click(function(){
+      $('body, html').animate({
+          scrollTop: '1000px'
+      }, 1000);
+  });
+});
+
+
+
+
+
+
+
