@@ -1,6 +1,8 @@
 const objPelis=[];
-//let i=0;
-const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari','The silence of the Lambs','Girls Trip','Zoolander','I Heart Huckabees','Tenacious D in The Pick of Destiny','Bridesmaids','Indiana Jones','Star Wars','Jumanji','Jurassic Park','Pirates of the Caribbean: The Curse of the Black Pearl','Mad Max: Fury Road','Metropolis','Gravity','War for the Planet of the Apes','Wall-E','Die Hard','Terminator 2: Judgment Day','The Dark Knight','Drive', 'E.T. The Extra-Terrestrial', 'Seven Samurai'];
+let dataMovies;
+
+//const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari','The silence of the Lambs','Girls Trip','Zoolander','I Heart Huckabees','Tenacious D in The Pick of Destiny','Bridesmaids','Indiana Jones','Star Wars','Jumanji','Jurassic Park','Pirates of the Caribbean: The Curse of the Black Pearl','Mad Max: Fury Road','Metropolis','Gravity','War for the Planet of the Apes','Wall-E','Die Hard','Terminator 2: Judgment Day','The Dark Knight','Drive', 'E.T. The Extra-Terrestrial', 'Seven Samurai'];
+const arrayPelis =['Get out','Psycho','The babadook','The cabinet of Dr. Caligari',];
 url = 'https://www.omdbapi.com/?t=';
 
 for (let i=0; i< arrayPelis.length; i++)
@@ -17,16 +19,28 @@ for (let i=0; i< arrayPelis.length; i++)
     return data;
     
   }) 
-  //console.log (data); 
+  //console.log (data);
+    .catch(err => (err))
+  }
 
-  .catch(err => (err))
+
+const radomBoton= document.getElementById("btnn");
+const listRandom =document.getElementById("list-random");
+function randMovies() {//imprime carousel
+
+for(let j=0; j<objPelis.length; j++){
+  let random = objPelis[Math.floor(Math.random()*objPelis.length)]
+  let arrayRandom = [];
+  arrayRandom.push(random); 
+ 
+  console.log(random);
 }
 
 const title = document.getElementById("title");
 const subtitle = document.getElementById("subtitle");
 const discover = document.getElementById("discover");
 const carrousel = document.getElementById("carrousel");
-
+  
 const dropdownGenero = document.getElementsByClassName('dropdown-item'); //funcion filtro
 const selectGenero = () => {
     
