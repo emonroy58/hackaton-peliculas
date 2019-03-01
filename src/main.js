@@ -40,6 +40,23 @@ const selectGenero = () => {
   }}
   selectGenero()
 
+  const dropdownLanguage = document.getElementsByClassName('dropdown-item Language');
+
+  const selectPais = () => {
+    for (let i = 0; i < dropdownLanguage.length; i++) {
+      dropdownLanguage[i].addEventListener("click", () => {
+        //console.log("hola")
+        let paisId = dropdownLanguage[i].id;
+        const arrayPaisPeli = window.data.filtroPais(objPelis, paisId);
+        //console.log(arrayGenero)
+        PrintMovies(arrayPaisPeli);
+        return arrayPaisPeli;
+        
+        //getMovies (arrayGeneroPeli)
+  })
+    }}
+    selectPais()
+
 
   const productWrappGener = document.getElementById('list-genero');
     const PrintMovies = (objTitlePelis) => { //muestra peliculas por genero 
@@ -61,13 +78,3 @@ const selectGenero = () => {
       productWrappGener.innerHTML = viewMovie;
       return viewMovie;
     }
-
-
-
-/*function getMovies() {
-    const stringMovies = JSON.parse(localStorage.getItem('data'));
-    console.log(stringPokemon);
-    objPelis.push(stringMovies);
-    console.log(objPelis);
-    return objPelis;
-  }*/
